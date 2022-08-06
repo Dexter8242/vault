@@ -1,0 +1,17 @@
+- ## Installation  
+	- `dnf -y install aide`  
+- ## Configuration  
+	- The config file is under **/etc/aide.conf**, change it to your liking.
+- ## Initialization  
+	- `# aide --init`  
+	  - This will initialize the database.
+- ## Moving Database  
+  - Next step is to copy over the new database for use with AIDE.
+	  - `# cp -p /var/lib/aide/aide.db.new.gz /var/lib/aide/aide.db.gz`  
+- ## Checking the Integrity  
+	- `aide --check`  
+		- If the output says *Looks okay!!* the integrity of the scanned files is okay.  
+	- If differences are found, review them.  
+		- If everything looks okay despite the differences, update the database and copy over the new database:  
+			- `aide --update`  
+			- `cp -p /var/lib/aide.db.new.gz /var/lib/aide/aide.db.gz`  
