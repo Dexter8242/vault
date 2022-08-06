@@ -1,5 +1,3 @@
-title:: Guides/IT/Enable Faillock on Fedora 36
-
 - `authselect current`
 	- Shows current authentication settings
 - `authselect enable-feature with-faillock`
