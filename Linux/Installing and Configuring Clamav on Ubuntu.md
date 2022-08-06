@@ -58,8 +58,8 @@
 - ## Testing ClamAV
 	- For testing ClamAV, we can download a test virus to `/tmp` and scan using clamscan tool.
 		- `$ cd /tmp`
-		  `$ wget http://www.eicar.org/download/eicar.com`
-		  `$ clamscan --infected --remove eicar.com`
+		- `$ wget http://www.eicar.org/download/eicar.com`
+		- `$ clamscan --infected --remove eicar.com`
 			- ```
 			  /tmp/eicar.com: Eicar-Test-Signature FOUND
 			   /tmp/eicar.com: Removed.
