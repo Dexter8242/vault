@@ -1,6 +1,4 @@
-title:: Guides/IT/Making APT Faster in Ubuntu Server
-
-- # Making APT Faster #linux #ubuntu #server
+- # Making APT Faster
 	- ## Step 1 - Installing the Prerequisites
 		- To use **apt-fast** you need to have either **axel** or **aria2** installed.
 			- `$ sudo apt install aria2`
