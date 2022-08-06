@@ -14,4 +14,4 @@
 	- If differences are found, review them.  
 		- If everything looks okay despite the differences, update the database and copy over the new database:  
 			- `aide --update`  
-			- `cp -p /var/lib/aide.db.new.gz /var/lib/aide/aide.db.gz`  
+			- `cp -p /var/lib/aide.db.new.gz /var/lib/aide/aide.db.gz` 
