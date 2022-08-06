@@ -1,0 +1,29 @@
+title:: Guides/IT/Installing and Configuring RkHunter
+
+- ## Installation and Configuration
+	- First we need to install it:
+		- `# apt install rkhunter`
+	- Next step is to configure it:
+		- `# vim /etc/rkhunter.conf`
+	- Change `UPDATE_MIRRORS=0` to 1 in order to check mirror update files when using `-update`.
+	- Next change `MIRRORS_MODE` to 0:
+		- MIRRORS_MODE:
+			- 0 – Use any mirror
+			- 1 – Use only local mirrors
+			- 2 – Use only remote mirrors
+- ## Enabling Regular Scans and Updates Using Cron
+	- One thing you should know is that the Rkhunter script is installed in the Cron.d Daily directory for regular scanning and updating.
+		- So the script is executing by Cron every day.
+			- Therefore, you need to edit the /etc/default/rkhunter.conf file and apply the following changes.
+				- You can enable Rkhunter scan checks by setting `CRON_DAILY_RUN` to **“true”** to run daily:
+					- `CRON_DAILY_RUN="true"`
+	- Now, you can also set `CRON_DB_UPDATE` to **true** again to enable weekly updates to the Rkhunter database:
+		- `CRON_DB_UPDATE="true"`
+	- You can also set the value of `APT_AUTOGEN` to **true** if you want to enable automatic database updates:
+		- `APT_AUTOGEN="true"`
+- ## Updating the Database
+	- After completing the previous steps, you can now run the following command to update Rkhunter text data files. It should note that these are files that Rkhunter uses to detect suspicious activity on the system. So they have to be kept up to date:
+		- `rkhunter --update`
+- ## How to Use Rkhunter and Perform System Check
+	- After you have completed all the steps mentioned to configure Rkhunter correctly, you should now run the following command to perform a scan test against your system:
+		- `rkhunter --check`
