@@ -1,5 +1,3 @@
-title:: Guides/IT/Installing and Configuring Clamav on Ubuntu
-
 - ## Install ClamAV on Ubuntu #antivirus #linux #security
 	- First we need to make sure the system is updated:
 		- `# apt update`
