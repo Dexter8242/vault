@@ -1,0 +1,27 @@
+title:: Guides/IT/Making APT Faster in Ubuntu Server
+
+- # Making APT Faster #linux #ubuntu #server
+	- ## Step 1 - Installing the Prerequisites
+		- To use **apt-fast** you need to have either **axel** or **aria2** installed.
+			- `$ sudo apt install aria2`
+			- `$ sudo apt install axel`
+	- ## Step 2 - Installing apt-fast
+		- Add the required PPA:
+			- `$ sudo add-apt-repository ppa:apt-fast/stable`
+		- Next update the local APT repository:
+			- `$ sudo apt update`
+		- Finally, install **apt-fast**:
+			- `$ sudo apt-get -y install apt-fast`
+	- ## Step 3 - Configuring apt-fast
+		- The default configuration file is located at **/etc/apt-fast**.
+			- Open the config file:
+				- `$ sudo vim /etc/apt-fast.conf`
+			- Add the mirrors of your choosing:
+				- `MIRRORS=( ‘http://archive.ubuntu.com/Ubuntu, http://ftp.acc.umu.se/ubuntu/’)`
+					- Mirrors can be found [here](https://launchpad.net/ubuntu/+archivemirrors).
+	- ## Step 4 - Using apt-fast
+		- Simply use **fast** instead of **get** in the **apt-get** command:
+			- `$ sudo apt-fast install package_name`
+			- `$ sudo apt-fast remove package_name`
+			- `$ sudo apt-fast update`
+			- `$ sudo apt-fast upgrade`
