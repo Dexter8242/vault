@@ -1,7 +1,3 @@
-title:: Guides/IT/Use Access Control Lists on Fedora 36
-
-- Taken from:
-	- https://www.server-world.info/en/note?os=CentOS_Stream_8&p=acl
 - ## Installation
 	- `# dnf -y install acl`
 - ## Setting ACLs
