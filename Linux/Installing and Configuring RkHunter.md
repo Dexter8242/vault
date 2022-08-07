@@ -1,5 +1,3 @@
-title:: Guides/IT/Installing and Configuring RkHunter
-
 - ## Installation and Configuration
 	- First we need to install it:
 		- `# apt install rkhunter`
@@ -12,11 +10,9 @@ title:: Guides/IT/Installing and Configuring RkHunter
 			- 1 – Use only local mirrors
 			- 2 – Use only remote mirrors
 - ## Enabling Regular Scans and Updates Using Cron
-	- One thing you should know is that the Rkhunter script is installed in the Cron.d Daily directory for regular scanning and updating.
-		- So the script is executing by Cron every day.
-			- Therefore, you need to edit the /etc/default/rkhunter.conf file and apply the following changes.
-				- You can enable Rkhunter scan checks by setting `CRON_DAILY_RUN` to **“true”** to run daily:
-					- `CRON_DAILY_RUN="true"`
+	- Edit the /etc/default/rkhunter.conf file and apply the following changes.
+			- You can enable Rkhunter scan checks by setting `CRON_DAILY_RUN` to **“true”** to run daily:
+				- `CRON_DAILY_RUN="true"`
 	- Now, you can also set `CRON_DB_UPDATE` to **true** again to enable weekly updates to the Rkhunter database:
 		- `CRON_DB_UPDATE="true"`
 	- You can also set the value of `APT_AUTOGEN` to **true** if you want to enable automatic database updates:
