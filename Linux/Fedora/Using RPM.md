@@ -1,31 +1,32 @@
 - # RPM Package Manager
-	- Querying a package:
-		- `rpm -q BitTorrent-5.2.2-1-Python2.4.noarch.rpm`
-			- Additional information about the program as well:
-				- `rpm -qi BitTorrent-5.2.2-1-Python2.4.noarch.rpm`
-		- Check a packages signature:
-		  id:: 62f0e26e-6559-47c4-8940-0be61489cf89
-			- `rpm --checksig package.rpm`
-	- Installing a package:
-		- `# rpm -ivh BitTorrent-5.2.2-1-Python2.4.noarch.rpm`
-			- `-i` - Install a package
-			- `-v` - Verbose output
-			- `-h` - Print hashmarks as the package is unpacked
-	- Installing a package without dependencies:
-		- `# rpm -ivh --nodeps package.rpm`
-			- Skips dependencies check, useful if you know all the dependencies are already installed.
-	- List recently installed packages:
-		- `# rpm -qa --last`
-	- List all installed packages:
-		- `rpm -qa`
+	## Querying and Installing
+		- Querying a package:
+			- `rpm -q BitTorrent-5.2.2-1-Python2.4.noarch.rpm`
+				- Additional information about the program as well:
+					- `rpm -qi BitTorrent-5.2.2-1-Python2.4.noarch.rpm`
+			- Check a packages signature:
+				- `rpm --checksig package.rpm`
+			- Query documentation for a package:
+				- `rpm -qdf /usr/bin/netstat` (**query document file**)
+		- Installing a package:
+			- `# rpm -ivh BitTorrent-5.2.2-1-Python2.4.noarch.rpm`
+				- `-i` - Install a package
+				- `-v` - Verbose output
+				- `-h` - Print hashmarks as the package is unpacked
+		- Installing a package without dependencies:
+			- `# rpm -ivh --nodeps package.rpm`
+				- Skips dependencies check, useful if you know all the dependencies are already installed.
+		- List recently installed packages:
+			- `# rpm -qa --last`
+		- List all installed packages:
+			- `rpm -qa`
 	- Upgrade a package:
 		- `# rpm -Uvh package.rpm`
 	- List what package a file belongs to:
 		- `rpm -qf /usr/bin/htpasswd`
 	- Get information about a package prior to installing:
 		- Use `rpm -qip` (**query info package**).
-	- Query documentation for a package:
-		- `rpm -qdf /usr/bin/netstat` (**query document file**)
+
 	- Verify the integrity of a package:
 		- `rpm -Vp package.rpm`
 	- To see what files ship with a certain package:
